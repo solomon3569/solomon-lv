@@ -32,3 +32,14 @@ Route::get('/home', 'HomeController@index');
 Route::get('/user', 'UserController@index');
 Route::get('/user/delete/{id}', 'UserController@destroy');
 Route::post('/user', 'UserController@store');
+
+
+Route::get('/products', 'ProductController@list');
+Route::get('/products/add_cart/{id}', 'ProductController@add_cart');
+Route::get('/products/list_cart', 'ProductController@list_cart');
+Route::get('/cart', 'ProductController@cart');
+Route::get('/products/det_cart/{id}', 'ProductController@det_cart');
+
+Route::get('/chat', 'ChatController@index');
+Route::get('/chat/all', 'ChatController@all');
+Route::post('chat', 'ChatController@create');
