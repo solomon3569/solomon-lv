@@ -79,10 +79,10 @@
             </div>
         </nav>
 
-        @yield('content')
+    @yield('content')
     </div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-      @yield('script')
+    @yield('script')
 </body>
 </html>
