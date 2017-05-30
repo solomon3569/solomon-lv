@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Auth;
 
 class ProductController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -40,24 +42,14 @@ class ProductController extends Controller
         ];
     }
 
-    public function det_cart(Request $request, $id)
+    public function det_list($task_id)
     {
-        $prev = $request->session()->get('cart');
-        $arr = [];
+        $task = Task::destroy($task_id);
 
-        if ($prev !=null) {
-            $arr = json_decode($prev);
-        }
-
-
-        $arr[] = $id;
-        $request->session()->put('cart', json_encode($arr));
-
-        return [
-        'status' => true
-        ];
-        //像這樣   這樣懂我在說什麼嗎?
+        return Response::json($task);
+        // //像這樣   這樣懂我在說什麼嗎?
     }
+
 
     public function list_cart(Request $request){
         $id_list = json_decode($request->session()->get('cart'));
@@ -71,7 +63,6 @@ class ProductController extends Controller
     public function cart(){
         return view('cart');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -135,7 +126,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        cart::destroy($id);
+        DB::delete($id);
         return redirect('/cart');
     }
 }

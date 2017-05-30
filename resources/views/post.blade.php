@@ -30,10 +30,11 @@ $(function(){
 			$('#tbody').append('<tr><td>' + obj.id + '</td><td><a href="/posts/' +obj.id + '">' + obj.title + '</a></td></tr>');
 		}
 		if (resp.next_page_url == null) {
-			$('#btn-next').hide();
+			$('#btn-next').hide() ;
 		} else if (resp.prev_page_url == null) {
-			$('#btn-pre').hide();
+			$('#btn-pre').hide()&& $('#btn-home').hide();
 		}
+		
 
 		$('#btn-next').attr('href', resp.next_page_url.replace('api/', ''));
 		$('#btn-pre').attr('href', resp.prev_page_url.replace('api/', ''));
@@ -45,7 +46,7 @@ $(function(){
 @section('content')
 <div class="container">
 	<div class="col-md-8 col-md-offset-2">
-		<h1>All My Posts</h1>
+		<h1>Message Borad</h1>
 		<table class="table">
 			<thead>
 				<tr>
@@ -57,8 +58,9 @@ $(function(){
 
 			</tbody>
 		</table>
-		<a class="btn btn-primary" id="btn-pre">Previous</a>
+		<a class="btn btn-primary" onclick="history.back()" id="btn-pre">Previos</a>
 		<a class="btn btn-primary" id="btn-next">Next</a>
+		<a href="/posts" class="btn btn-primary" id="btn-home">Home Page</a>
 	</div>
 	
 </div>

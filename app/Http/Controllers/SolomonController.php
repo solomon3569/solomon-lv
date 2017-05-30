@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Post;
-use Log;
-use Validator;
 
-class PostController extends Controller
+class SolomonController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //return Post::all();
-        return Post::simplePaginate(10);
+        return view('solomon');
     }
 
     /**
@@ -40,17 +36,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'title' => 'required|max20',
-            'note' => 'required',
-            'author' => 'required|integer'
-        ]);
-
-        if ($validator->fails()) {
-            return ['errors' => $validator->errors()];
-        }    
-
-        return Post::create($request->all());
+        //
     }
 
     /**
@@ -61,7 +47,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return Post::findOrFail($id);
+        //
     }
 
     /**
