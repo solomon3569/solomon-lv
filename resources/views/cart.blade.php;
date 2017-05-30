@@ -3,6 +3,9 @@
 @section('script')
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
 $(function(){
     $('.remove').click(function(){
         var task_id = $(this).data('id');
@@ -13,6 +16,7 @@ $(function(){
             data: $('#tbody').serialize(),
             type:"POST",
             dataType:'json',
+<<<<<<< HEAD
 
             success: function(msg){
                 alert(msg);
@@ -23,9 +27,14 @@ $(function(){
                 alert(thrownError);
              }
 =======
+=======
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
 
-$(function() {
+            success: function(msg){
+                alert(msg);
+            },
 
+<<<<<<< HEAD
     $(document).on('click', '.btn-delete', function () {
         var id = $(this).data('id');
         var list_cart = $.getJSON('/products/list_cart');
@@ -33,6 +42,12 @@ $(function() {
         list_cart = $.grep(list_cart, function(resp){
             return value != id;
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+             error:function(xhr, ajaxOptions, thrownError){
+                alert(xhr.status);
+                alert(thrownError);
+             }
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
         });
     });
 
@@ -40,6 +55,9 @@ $(function() {
         for( var index in resp ) {
             var obj = resp[index];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
             var tbody = $('#tbody tr');
             var itemID = $('<tr class=\"itemGRID\" id=\"field\""></tr>');
             var itemNB = $('<td>' + obj.id + '</td>');
@@ -67,6 +85,7 @@ $(function() {
             $('#tbody').append(itemID);
 
             // $('#tbody').append('<tr><td>' + obj.id + '</td><td>'+obj.name+'</td><td>'+obj.price+'<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-danger btn-det-cart">刪除物品</button></td></tr>');
+<<<<<<< HEAD
         }
     });
 
@@ -75,15 +94,24 @@ $(function() {
         }
     });
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+        }
+    });
+
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
 });
 
 </script>
 @endsection
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
 @section('content')
 <div class="container">
     <div class="col-md-8 col-md-offset-2">
@@ -94,12 +122,16 @@ $(function() {
                     <th>#</th>
                     <th>商品名稱</th>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <th>價格</th>
 =======
                     <th>
                         價格
                     </th>
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+                    <th>價格</th>
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
                     <th>-</th>
                 </tr>
             </thead>
@@ -107,9 +139,13 @@ $(function() {
 
             </tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
         </table>
         <a href="/products" class="btn btn-danger">繼續購物</a>
     </div>

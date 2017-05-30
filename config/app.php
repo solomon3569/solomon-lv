@@ -228,10 +228,14 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
         'Cart'    => Gloudemans\Shoppingcart\Facades\Cart::class,
 =======
 
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+        'Cart'    => Gloudemans\Shoppingcart\Facades\Cart::class,
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
     ],
 
 ];

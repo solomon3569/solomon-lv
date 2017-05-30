@@ -5,12 +5,17 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "hash": "601c2d1bd51d5bcaf87b72f4bd9e6e00",
     "content-hash": "d003f2309b43530f7d1c3cd0dce9bf22",
 =======
     "hash": "2a92a40cc27b8c4244f48ac297e18841",
     "content-hash": "6d03ff14f2d83b23557bb6809702da36",
 >>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
+=======
+    "hash": "601c2d1bd51d5bcaf87b72f4bd9e6e00",
+    "content-hash": "d003f2309b43530f7d1c3cd0dce9bf22",
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -625,6 +630,7 @@
                 "storage"
             ],
             "time": "2017-04-28 10:15:08"
+<<<<<<< HEAD
         },
         {
             "name": "maximebf/debugbar",
@@ -686,6 +692,8 @@
                 "debugbar"
             ],
             "time": "2017-01-05 08:46:19"
+=======
+>>>>>>> 840219193aa23634a6c2d6f77eaddf73816d29bc
         },
         {
             "name": "maximebf/debugbar",
