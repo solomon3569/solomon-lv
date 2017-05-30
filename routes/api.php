@@ -22,5 +22,8 @@ Route::get('/posts/{id}', 'PostController@show');
 Route::post('/posts', 'PostController@store');
 
 Route::get('/products', 'ProductController@index');
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com

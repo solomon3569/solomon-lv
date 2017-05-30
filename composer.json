@@ -7,8 +7,12 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
+<<<<<<< HEAD
         "barryvdh/laravel-debugbar": "^2.3",
         "gloudemans/shoppingcart": "~2.3.0"
+=======
+        "barryvdh/laravel-debugbar": "^2.3"
+>>>>>>> remotes/master/ec2-52-192-45-199.ap-northeast-1.compute.amazonaws.com
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
