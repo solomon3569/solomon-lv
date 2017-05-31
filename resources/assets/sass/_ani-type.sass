@@ -1,0 +1,64 @@
+@mixin gra($gra-gra-1: top,$color-1: $c_m1,$color-2: $c_m2)
+	background: -webkit-linear-gradient($gra-gra-1, $color-1 , $color-2)
+	background: -o-linear-gradient($gra-gra-1, $color-1, $color-2)
+	background: -moz-linear-gradient($gra-gra-1, $color-1, $color-2)
+	background: linear-gradient(to $gra-gra-1, $color-1 , $color-2)
+@mixin basic_trs($select_type: all,$sec: 0.5s)
+	-webkit-transition: $select_type $sec
+	-moz-transition: $select_type $sec
+	-ms-transition: $select_type $sec
+	-o-transition: $select_type $sec
+	transition: $select_type $sec
+@mixin rwd($point)
+	@if $point == md
+		@media only screen and (max-width: 1169px)
+			@content
+	@else if $point == sm
+		@media only screen and (max-width: 969px)
+			@content
+	@else if $point == xs
+		@media only screen and (max-width: 749px)
+			@content
+	@else if $point == land
+		@media all and (orientation:landscape)
+			@content
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@-o-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
++keyframes(fadeIn)
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+=animation($content)
+	-webkit-animation: $content
+	-moz-animation: $content
+	-ms-animation: $content
+	-o-animation: $content
+	animation: $content
+@mixin trot($rot: 180)
+	-webkit-transform: rotate(#{$rot}deg)
+	-moz-transform: rotate(#{$rot}deg)
+	-ms-transform: rotate(#{$rot}deg)
+	-o-transform: rotate(#{$rot}deg)
+	transform: rotate(#{$rot}deg)
+@mixin tran($w: 0, $h: 0)
+	-webkit-transform: translate($w, $h)
+	-moz-transform: translate($w, $h)
+	-ms-transform: translate($w, $h)
+	-o-transform: translate($w, $h)
+	transform: translate($w, $h)
+@mixin scale($w: 0, $h: 0)
+	-webkit-transform: scale($w, $h)
+	-moz-transform: scale($w, $h)
+	-ms-transform: scale($w, $h)
+	-o-transform: scale($w, $h)
+	transform: scale($w, $h)

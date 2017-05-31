@@ -14,6 +14,8 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass('app.sass')
+       // .webpack('app.js');
+       .version('css/app.css');
+//添加自动更替版本号，保存在 public/build/css/app-xxxxx.css
 });

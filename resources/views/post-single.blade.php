@@ -19,9 +19,9 @@ $(function(){
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-default">
             <div class="panel-heading" id="title">Title</div>
-
             <div class="panel-body" id="body">
 			</div>
+			<a class="btn btn-primary" onclick="history.back()" id="btn-pre">Previos</a>
         </div>
 	</div>	
 </div>
