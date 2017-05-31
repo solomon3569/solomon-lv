@@ -38,7 +38,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
-                        SolomonChung
+                        HomePage
                     </a>
                 </div>
 

@@ -7720,6 +7720,34 @@ button.close {
   display: block;
 }
 
+.container_me .myphoto {
+  text-align: center;
+  min-height: 400px;
+}
+
+.container_me .myphoto .img {
+  margin-top: 10%;
+  display: inline-block;
+  width: 127px;
+}
+
+.container_me .myphoto .img img {
+  max-width: 100%;
+  border-radius: 100%;
+}
+
+.container_me .myphoto h1 {
+  font-size: 2.8rem;
+  line-height: 3rem;
+  color: #fff;
+}
+
+.container_me .myphoto p {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #fff;
+}
+
 .container_me .introduction {
   background: url(/pic/introduction.jpg);
   display: -webkit-box;
@@ -7732,14 +7760,13 @@ button.close {
 
 .container_me .introduction .main_block {
   background-color: rgba(17, 16, 20, 0.6);
-  height: 30vh;
+  height: 80%;
   width: 80%;
   max-width: 80vh;
   margin-right: 20%;
   margin-left: 10%;
-  margin-top: 10%;
   color: #e4e4e3;
-  padding-left: 2vh;
+  padding: 2vh;
 }
 
 .container_me .introduction h1 {

@@ -60,7 +60,7 @@ $(function(){
 		</table>
 		<a class="btn btn-primary" onclick="history.back()" id="btn-pre">Previos</a>
 		<a class="btn btn-primary" id="btn-next">Next</a>
-		<a href="/posts" class="btn btn-primary" id="btn-home">Home Page</a>
+		<a href="/posts" class="btn btn-primary" id="btn-home">First Page</a>
 	</div>
 	
 </div>

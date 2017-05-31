@@ -33,7 +33,7 @@ $(function(){
             var itemNAME = $('<td>' + obj.name + '</td>');
             var itemPRICE = $('<td>' + obj.price + '</td>');
 
-            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
+            var removeButton = $('<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-danger btn-det-cart">刪除物品</button></td>');
 
             removeButton.click(function() {
                 $(this).parent().remove();
