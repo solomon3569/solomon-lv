@@ -3,15 +3,19 @@
 @section('script')
 <script>
 $(function(){
-    $('.remove').click(function(){
-        var task_id = $(this).data('id');
-        var URLs="/products/list_cart";
-        console.log( task_id + 'clicked');
+    $(document).ready(function(){
+        $(".itemGRID").click(function() {
+            saveData();
+        console.log( remove + 'clicked');
+        });
+        // var task_id = $(this).data('id');
+        var newlist = $('#tbody').data();
+        var URLs="{{url('/resources/views/cart.blade.php')}}";
         $.ajax({
             url: URLs,
-            data: $('#tbody').serialize(),
-            type:"POST",
-            dataType:'json',
+            // data: $('#tbody').serialize(),
+            data: {itemGRID:newlist},
+            type: "POST",
 
             success: function(msg){
                 alert(msg);
@@ -27,7 +31,7 @@ $(function(){
     $.getJSON('/products/list_cart', function(resp) {
         for( var index in resp ) {
             var obj = resp[index];
-            var tbody = $('#tbody tr');
+            var tbody = $('#tbody tr ');
             var itemID = $('<tr class=\"itemGRID\" id=\"field\""></tr>');
             var itemNB = $('<td>' + obj.id + '</td>');
             var itemNAME = $('<td>' + obj.name + '</td>');
@@ -55,6 +59,7 @@ $(function(){
 
             // $('#tbody').append('<tr><td>' + obj.id + '</td><td>'+obj.name+'</td><td>'+obj.price+'<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-danger btn-det-cart">刪除物品</button></td></tr>');
         }
+
     });
 
 });

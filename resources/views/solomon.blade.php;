@@ -17,7 +17,7 @@
         </div>
         <div class="introduction">
             <div class="main_block">
-                <h1>Inroduce Myself</h1>
+                <h1>Introduce Myself</h1>
                 <p>
                     我畢業於國立台北科技大學電機系，求學階段結束後，迄今已有5年的工作經驗，從中我了解積極互助的團隊工作模式與良好的資訊傳承，是一個好的工作性質與環境不可或缺的因素，而我具備上述構成二者主要條件，團隊良好的溝通管道和建立有系統的資訊歸檔。
                 </p>

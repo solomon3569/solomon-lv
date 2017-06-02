@@ -34,7 +34,7 @@ class ChatController extends Controller
             'message' =>$message,
             'author' =>Auth::user()->id
         ];
-        return chat::create($data);
+        return chat::create($data);http://52.192.45.199/
     }
     public function all()
     {
