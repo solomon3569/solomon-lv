@@ -41,7 +41,7 @@ Route::get('/products', 'ProductController@list');
 Route::get('/products/add_cart/{id}', 'ProductController@add_cart');
 Route::get('/products/list_cart', 'ProductController@list_cart');
 Route::get('/cart', 'ProductController@cart');
-Route::delete('/products/det_cart/{id}', 'ProductController@det_list');
+Route::get('/products/det_cart/{id}', 'ProductController@det_list');
 
 
 

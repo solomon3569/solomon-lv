@@ -38,15 +38,34 @@ class ProductController extends Controller
         $request->session()->put('cart', json_encode($arr));
 
         return [
-        'status' => true
+            'status' => true
         ];
     }
 
-    public function det_list($task_id)
+    public function det_list($task_id, Request $request)
     {
-        $task = Task::destroy($task_id);
+        $arrCart = json_decode($request->session()->get('cart'));
+        $newCart = array();
 
-        return Response::json($task);
+        unset($arrCart[array_search($task_id, $arrCart)]);
+
+        $arrTest = array (0 = 'A', 1 => 'B', 2 => 'C');
+        // foreach ($arrTest as $key => $test) {
+
+        //     if ($task_id != $cart) {
+
+        //         $newCart[] = $cart;
+
+        //     }
+
+        // }
+
+        $request->session()->put('cart', json_encode($arrCart));
+        
+        echo "ok";
+        //$task = Task::destroy($task_id);
+
+        //return Response::json($task);
         // //像這樣   這樣懂我在說什麼嗎?
     }
 

@@ -3,19 +3,56 @@
 @section('script')
 <script>
 $(function(){
-    $(document).ready(function(){
-        $(".itemGRID").click(function() {
-            saveData();
-        console.log( remove + 'clicked');
-        });
-        // var task_id = $(this).data('id');
-        var newlist = $('#tbody').data();
-        var URLs="{{url('/resources/views/cart.blade.php')}}";
+    $(document).on('click', '.remove', function () {
+
+        var task_id = $(this).attr('data-id');
+
+        var URLs ="http://localhost:8000/products/det_cart/" + task_id;
+
         $.ajax({
             url: URLs,
-            // data: $('#tbody').serialize(),
-            data: {itemGRID:newlist},
-            type: "POST",
+            data: $('#tbody').serialize(),
+            type:"GET",
+            dataType:'text',
+
+            success: function(msg){
+                if ('ok' == msg) {
+
+                    $('#field' + task_id).remove();
+
+                    /*$(this).parent().remove();
+                    var remove = $(".itemGRID");
+                    if (remove > 1) {
+                        var newId = 1;
+                        remove.each(function(){
+                            renewId = "field" + newId;
+                            $(this).attr("id",renewId);
+                            newId++;
+                        });
+                    }*/
+
+                    alert('success');
+
+                }
+            },
+
+             // error:function(xhr, ajaxOptions, thrownError){ 
+             //    alert(xhr.status); 
+             //    alert(thrownError); 
+             // }
+        });
+    });
+
+    $('.remove').click(function(){
+        var task_id = $(this).data('id');
+        var URLs ="localhost:8000/products/det_cart/" + task_id;
+        alert(URLs);
+        console.log( task_id + 'clicked');
+        $.ajax({
+            url: URLs,
+            data: $('#tbody').serialize(),
+            type:"POST",
+            dataType:'json',
 
             success: function(msg){
                 alert(msg);
@@ -32,14 +69,16 @@ $(function(){
         for( var index in resp ) {
             var obj = resp[index];
             var tbody = $('#tbody tr ');
-            var itemID = $('<tr class=\"itemGRID\" id=\"field\""></tr>');
+            var itemID = $('<tr class=\"itemGRID\" id=\"field' + obj.id + '\""></tr>');
             var itemNB = $('<td>' + obj.id + '</td>');
             var itemNAME = $('<td>' + obj.name + '</td>');
             var itemPRICE = $('<td>' + obj.price + '</td>');
 
-            var removeButton = $('<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-danger btn-det-cart">刪除物品</button></td>');
+            var removeButton = $('<td><button data-id="' + obj.id  + '" class="btn btn-sm btn-danger btn-det-cart remove">刪除物品</button></td>');
 
+            /*
             removeButton.click(function() {
+                alert($(this).attr('data-id'));
                 $(this).parent().remove();
                 var remove = $(".itemGRID");
                 if (remove > 1) {
@@ -51,6 +90,7 @@ $(function(){
                     });
                 }
             });
+            */
             itemID.append(itemNB);
             itemID.append(itemNAME);
             itemID.append(itemPRICE);
