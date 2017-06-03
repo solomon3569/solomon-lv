@@ -44,22 +44,27 @@ class ProductController extends Controller
 
     public function det_list($task_id, Request $request)
     {
+        // $cart = array();
+        // if (isset($cart[1])) {
+        //     $cart[1]++;
+        // } else {
+        //     $cart[1] = 1;            
+        // }
+        // dd($cart);
+
         $arrCart = json_decode($request->session()->get('cart'));
-        $newCart = array();
+        // $newCart = array();
+        // dd($arrCart);
 
         unset($arrCart[array_search($task_id, $arrCart)]);
+        
+        foreach ($arrCart as $cart) {
 
-        // foreach ($arrTest as $key => $test) {
+            $newCart[] = $cart;
 
-        //     if ($task_id != $cart) {
+        }
 
-        //         $newCart[] = $cart;
-
-        //     }
-
-        // }
-
-        $request->session()->put('cart', json_encode($arrCart));
+        $request->session()->put('cart', json_encode($newCart));
         
         echo "ok";
         //$task = Task::destroy($task_id);
