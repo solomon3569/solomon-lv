@@ -42,29 +42,29 @@ $(function(){
         });
     });
 
-    $('.remove').click(function(){
-        var task_id = $(this).data('id');
-        // var path = app_path();
-        // var path = app_path('Http/Controllers/products/det_cart/'+task_id);
-        var URLs ="localhost:8000/products/det_cart/" + task_id;
-        alert(URLs);
-        console.log( task_id + 'clicked');
-        $.ajax({
-            url: URLs,
-            data: $('#tbody').serialize(),
-            type:"POST",
-            dataType:'json',
+    // $('.remove').click(function(){
+    //     var task_id = $(this).data('id');
+    //     // var path = app_path();
+    //     // var path = app_path('Http/Controllers/products/det_cart/'+task_id);
+    //     var URLs ="localhost:8000/products/det_cart/" + task_id;
+    //     alert(URLs);
+    //     console.log( task_id + 'clicked');
+    //     $.ajax({
+    //         url: URLs,
+    //         data: $('#tbody').serialize(),
+    //         type:"POST",
+    //         dataType:'json',
 
-            success: function(msg){
-                alert(msg);
-            },
+    //         success: function(msg){
+    //             alert(msg);
+    //         },
 
-             error:function(xhr, ajaxOptions, thrownError){ 
-                alert(xhr.status); 
-                alert(thrownError); 
-             }
-        });
-    });
+    //          error:function(xhr, ajaxOptions, thrownError){ 
+    //             alert(xhr.status); 
+    //             alert(thrownError); 
+    //          }
+    //     });
+    // });
 
     $.getJSON('/products/list_cart', function(resp) {
         for( var index in resp ) {

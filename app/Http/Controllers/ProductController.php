@@ -53,8 +53,7 @@ class ProductController extends Controller
         // dd($cart);
 
         $arrCart = json_decode($request->session()->get('cart'));
-        // $newCart = array();
-        // dd($arrCart);
+
 
         unset($arrCart[array_search($task_id, $arrCart)]);
         
@@ -63,10 +62,12 @@ class ProductController extends Controller
             $newCart[] = $cart;
 
         }
+        if (isset($newCart)) {
+            $request->session()->put('cart', json_encode($newCart));
+        }
+        return('ok');
 
-        $request->session()->put('cart', json_encode($newCart));
-        
-        echo "ok";
+        // echo "ok";
         //$task = Task::destroy($task_id);
 
         //return Response::json($task);
