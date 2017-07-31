@@ -81,10 +81,13 @@
             </div>
         </nav>
 
+
     @yield('content')
     </div>
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js"> </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     @yield('script')
 </body>
 </html>
+
