@@ -52,17 +52,18 @@ class ProductController extends Controller
         // }
         // dd($cart);
 
+        // $arrCart = array($request->session()->get('cart'));
+        // $delCart = array_splice($arrCart, $task_id);
+        // dd($arrCart);
         $arrCart = json_decode($request->session()->get('cart'));
 
-
         unset($arrCart[array_search($task_id, $arrCart)]);
-        
+
+
         foreach ($arrCart as $cart) {
-
             $newCart[] = $cart;
-
         }
-        if (isset($newCart)) {
+        if (!empty($newCart)) {
             $request->session()->put('cart', json_encode($newCart));
         }
         return('ok');
@@ -77,10 +78,14 @@ class ProductController extends Controller
 
     public function list_cart(Request $request){
         $id_list = json_decode($request->session()->get('cart'));
+        // dd($id_list);
         $prod_list = [];
+    if (!empty($id_list)) {
+        # code...
         foreach ($id_list as $id) {
             $prod_list[] = Product::find($id);
         }
+    }
         return $prod_list;
     }
 

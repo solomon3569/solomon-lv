@@ -26,15 +26,14 @@
                 </p>
                 <p>我擅長</p>
                 <p>1.Laravel 及 PHP 語法</p>
-                <p>2.MySQL 資料庫、SQL 指令</p>
-                <p>3.常見網頁功能：會員登入、留言板、(購物車)</p>
-                <p>4.AJAX 前後端介接</p>
-                <p>5.網站 Debug 除錯</p>
-                <p>6.Apache 伺服器軟體安裝</p>
-                <p>7.網址域名 Domain Name 的使用及 DNS 基礎</p>
-                <p>8.Ubuntu Linux 基礎指令操作（使用本機虛擬機）</p>
-                <p>9.Git 版本控制及 Code Deployment</p>
-                <p>10.使用Amazon AWS架設的網站</p>   
+                <p>2.常見網頁功能：會員登入、留言板、(購物車)</p>
+                <p>3.AJAX 前後端介接</p>
+                <p>4.網站 Debug 除錯</p>
+                <p>5.Apache 伺服器軟體安裝</p>
+                <p>6.網址域名 Domain Name 的使用及 DNS 基礎</p>
+                <p>7.Ubuntu Linux 基礎指令操作（使用本機虛擬機）</p>
+                <p>8.Git 版本控制及 Code Deployment</p>
+                <p>9.使用Amazon AWS架設的網站</p>   
             </div>
          
         </div>
