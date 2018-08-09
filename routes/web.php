@@ -12,22 +12,22 @@
 */
 
 Route::get('/', function () {
-	return view('solomon');
-	// return 'Hello';
+    return view('solomon');
+    // return 'Hello';
 });
 
 Route::get('solomon', function () {
-	return view('solomon');
+    return view('solomon');
 });
 
 Route::get('/posts', function(){
-	return view('post');
+    return view('post');
 });
 
 Route::get('/posts/{id}', function($id){
-	return view('post-single',[
-		'id' => $id
-	]);
+    return view('post-single',[
+        'id' => $id
+    ]);
 });
 
 Auth::routes();
@@ -56,23 +56,23 @@ Route::get('/solomon', 'SolomonController@index');
 Route::pattern('student_no', 's[0-9]{10}');
 
 Route::group(['prefix'=>'student'],function(){
-	Route::get('/', 'StudentController@index');
+    Route::get('/', 'StudentController@index');
 
-	Route::get('{student_no}',[
-		'as'=>'student',
-		'uses'=>'StudentController@getStudentData'
-	]);
+    Route::get('{student_no}',[
+        'as'=>'student',
+        'uses'=>'StudentController@getStudentData'
+    ]);
 
-	Route::get('{student_no}/score/{subject?}',[
-		'as'=>'student.score',
-		'uses'=>'StudentController@getStudentScore'
-	])->where(['subject'=>'(chinese|english|math)']);
+    Route::get('{student_no}/score/{subject?}',[
+        'as'=>'student.score',
+        'uses'=>'StudentController@getStudentScore'
+    ])->where(['subject'=>'(chinese|english|math)']);
 
 });
 
 Route::group(['namespace'=>'Cool'],function(){
 
-	Route::get('cool', 'TestController@index');
+    Route::get('cool', 'TestController@index');
 });
 
 Route::get('edit/{student_no}','SchoolController@getEdit');
