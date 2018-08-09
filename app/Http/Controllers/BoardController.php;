@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Request;
+
+use App\Score as ScoreEloquent;
+
+use Route;
+use View;
+
+class BoardController extends Controller {
+	public function getIndex() {
+		return view('board', ['score' => ScoreEloquent::with('student')->orderByTotal()->orderBySub()->get()]);
+	}
+
+	public function getName() {
+		return Route::currentRouteAction();
+	}
+}

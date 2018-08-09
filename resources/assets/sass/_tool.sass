@@ -1,0 +1,120 @@
+// +rwd(md)
+//     font-size: 0.85rem
+@mixin rwd($point)
+    @if $point == xl
+        @media only screen and (max-width: 1199px)
+            @content
+    @if $point == lg
+        @media only screen and (max-width: 991px)
+            @content
+    @else if $point == md
+        @media only screen and (max-width: 767px)
+            @content
+    @else if $point == sm
+        @media only screen and (max-width: 413px)
+            @content
+    @else if $point == xxs
+        @media only screen and (max-width: 355px)
+            @content
+    @else if $point == xs
+        @media all and (orientation:landscape)
+            @content
+// +keyframes(fade)
+//     0%
+//         +shadow (0 0 30px orange)
+//     100%
+//         +shadow (0 0 30px gray)
+@mixin keyframes($animation-name)
+    @-webkit-keyframes #{$animation-name}
+        @content
+    @-moz-keyframes #{$animation-name}
+        @content
+    @-ms-keyframes #{$animation-name}
+        @content
+    @-o-keyframes #{$animation-name}
+        @content
+    @keyframes #{$animation-name}
+        @content
+
+// +animation (fade 2s infinite alternate)
+@mixin animation($str)
+    -webkit-animation: #{$str} /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: #{$str} /* Firefox < 16 */
+    -ms-animation: #{$str} /* Internet Explorer */
+    -o-animation: #{$str} /* Opera < 12.1 */
+    animation: #{$str}
+
+// +shadow (0 0 30px shadow_color)
+@mixin shadow($str)
+    -webkit-shadow: #{$str} /* Safari, Chrome and Opera > 12.1 */
+    -moz-shadow: #{$str} /* Firefox < 16 */
+    -ms-shadow: #{$str} /* Internet Explorer */
+    -o-shadow: #{$str} /* Opera < 12.1 */
+    box-shadow: #{$str}
+
+// +transition(style .3s transition_effect)
+@mixin transition($str)
+    -webkit-transition: #{$str} /* Safari, Chrome and Opera > 12.1 */
+    -moz-transition: #{$str} /* Firefox < 16 */
+    -ms-transition: #{$str} /* Internet Explorer */
+    -o-transition: #{$str} /* Opera < 12.1 */
+    transition: #{$str}
+
+// +bkg_url("file's_name.png")
+@mixin bkg_url($str, $img_type)
+    @if $img_type == jpg
+        background-image: url(../../#{$event_name}/img/#{$str}.jpg)
+    @else
+        background-image: url(../../#{$event_name}/img/#{$str}.png)
+
+// +bkg_all(no-repeat,center,contain)
+@mixin bkg_all($repeat, $position, $size)
+    background-repeat: $repeat
+    background-position: $position
+    background-size: $size
+
+// +display(flex,center,column,none,relative)
+@mixin display($display, $align_items, $flex_direction, $justify_content, $position)
+    display: $display
+    @if $align_items != none
+        align-items: $align_items
+    @else
+
+    @if $flex_direction != none
+        flex-direction: $flex_direction
+    @else
+
+    @if $justify_content != none
+        justify-content: $justify_content
+    @else
+
+    @if $position != none
+        position: $position
+    @else
+
+// +font_size(1.5, 2.5, rem)
+@mixin font_size($font_size, $line_height, $font_unit)
+    font-size: $font_size#{$font_unit}
+    line-height: $line_height#{$font_unit}
+
+$event_name: 'golden_nut'
+$header_setting: #fff
+$header_setting_text: #fd3583
+$main_bkg_color: #46251e
+$index_anchor: #b56204
+$index_knight: #b56204
+$index_copyright: #46251e
+$font_text_title_color: #fff
+$font_text_color: #fff
+$font_color_time: #fff
+$index_detail_anchor: #fecd95
+$index_detail_knight: #ffd06c
+$index_detail_unit: #e9518c
+$index_detail_text: #000
+$notice: #46251e
+$notice_anchor: #fae8a6
+$notice_knight: #c2ea92
+$notice_text: #fff
+$notice_table_text: #000
+$main_table_odd_color: #fff
+$main_table_even_color: #fff

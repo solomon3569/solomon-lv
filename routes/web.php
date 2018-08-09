@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('solomon');
+	return view('solomon');
+	// return 'Hello';
+});
+
+Route::get('solomon', function () {
+	return view('solomon');
 });
 
 Route::get('/posts', function(){
@@ -25,10 +30,7 @@ Route::get('/posts/{id}', function($id){
 	]);
 });
 
-
 Auth::routes();
-
-
 
 Route::get('/home', 'HomeController@index');
 

@@ -2,82 +2,11 @@
 
 @section('script')
 <script>
-        $('.carousel').on('slid.bs.carousel', function () {
-
-            var anchor_current = $('.item.active').html();
-            var pos = anchor_current.indexOf("pic_");
-            if(pos!=-1){
-                var anchor_new_id = anchor_current.substring(pos).slice(4,5);
-                // anchor_new_id++;
-            }
-            console.log(anchor_new_id);
-            $('.cont .active').removeClass("active");
-            $('.img_'+anchor_new_id).addClass('active');
-        })
 </script>
 @endsection
 
 @section('content')
-<!-- <head>
-    <link rel="stylesheet" href="{{ elixir('css/app.css')  }}" >
-</head> -->
 <body>
-    <div id="carousel-example-generic myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="main_carl active" id="main_carl"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1" class="main_carl" id="main_carl"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2" class="main_carl" id="main_carl"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="/pic/member.jpg" alt="..." id="pic_1">
-          <div class="carousel-caption">
-            ...1
-          </div>
-        </div>
-        <div class="item">
-          <img src="/pic/message.jpg" alt="..." id="pic_2">
-          <div class="carousel-caption">
-            ...2
-          </div>
-        </div>
-        <div class="item">
-          <img src="/pic/shoppingcart.jpg" alt="..." id="pic_3">
-          <div class="carousel-caption">
-            ...3
-          </div>
-        </div>
-        ...
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-    <div class="vc_nb_bar">
-        <div class="con_bg">
-          <div class="cont" id="img_number">
-            <div class="img_1 active" style="background-image: url('imgs/bg/Assassins-Creed-Origins-Xbox-One-X-version-15.jpg');">
-            </div>
-            <div class="img_2" style="background-image: url('imgs/bg/Assassins-Creed-Origins-Xbox-One-X-version-15.jpg');"></div>
-            <div class="img_3" style="background-image: url('imgs/bg/Assassins-Creed-Origins-Xbox-One-X-version-15.jpg');"></div>
-            <div class="img_4" style="background-image: url('imgs/bg/Assassins-Creed-Origins-Xbox-One-X-version-15.jpg');"></div>
-            <div class="img_5" style="background-image: url('imgs/bg/Assassins-Creed-Origins-Xbox-One-X-version-15.jpg');"></div>
-          </div>
-        </div>
-    </div>
-
-
     <div class="container_me container-fluid">
         <div class="myphoto">
             <div class="img">

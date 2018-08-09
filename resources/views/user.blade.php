@@ -14,14 +14,16 @@
 
 @section('content')
 <div class="container">
+
+</div>
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">List All User</div>
-
                 <div class="panel-body">
                     <table class="table">
-                        <thead>                            
+                        <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
@@ -119,7 +121,7 @@
                         </div>
                     </form>
 
-                    
+
                 </div>
             </div>
         </div>
